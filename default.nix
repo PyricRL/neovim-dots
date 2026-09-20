@@ -1,70 +1,54 @@
-{ inputs, pkgs, ... }:
+{ pkgs, lib, ... }:
 {
-  imports = [ inputs.mnw.homeManagerModules.default ];
+  appName = "nvim";
+  enable = true;
+  
+  initLua = ''
+    require("pyricConf")
+  '';
 
-  qt.enable = true;
-
-  home.packages = with pkgs; [
+  extraBinPath = with pkgs; [
     git
     ripgrep
-
-    lua-language-server
-
-    nixd
-
-    typescript-language-server
-
-    rust-analyzer
-    cargo
-    rustc
-
-    gcc
-
-    kdePackages.qtdeclarative
+    fd
+    wl-clipboard
+    xclip
   ];
 
-  programs.mnw = {
-    enable = true;
-    initLua = ''
-      require("pyricConf")
-    '';
-    plugins = {
-      start = with pkgs.vimPlugins; [
-        # themes
-        ayu-vim
+  plugins = {
+    start = with pkgs.vimPlugins; [
+      ayu-vim
 
-        # plugins
-        gitsigns-nvim
-        nvim-lspconfig
-        nvim-tree-lua
-        blink-cmp
-        telescope-nvim
-        plenary-nvim
-        which-key-nvim
-        indent-blankline-nvim
-        nvim-autopairs
-        (nvim-treesitter.withPlugins (plugins: with plugins; [
-          lua
-          nix
-          typescript
-          javascript
-          html
-          css
-          json
-          markdown
-          bash
-          python
-          c
-          cpp
-          rust
-          qmljs
-        ]))
-      ];
+      gitsigns-nvim
+      nvim-lspconfig
+      nvim-tree-lua
+      blink-cmp
+      telescope-nvim
+      plenary-nvim
+      which-key-nvim
+      indent-blankline-nvim
+      nvim-autopairs
 
-      dev.pyricConf = {
-        pure = ./nvim;
-	      impure = "/' .. vim.uv.cwd() .. '/nvim";
-      };
+      (nvim-treesitter.withPlugins (p: with p; [
+        lua
+        nix
+        typescript
+        javascript
+        html
+        css
+        json
+        markdown
+        bash
+        python
+        c
+        cpp
+        rust
+        qmljs
+      ]))
+    ];
+    dev.pyricConf = {
+      pure = ./nvim;
+      impure = "";
     };
   };
 }
