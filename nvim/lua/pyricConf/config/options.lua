@@ -34,7 +34,7 @@ opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 opt.splitbelow = true
 opt.splitright = true
 
-opt.redrawtime = 10000
+opt.redrawtime = 2000
 opt.maxmempattern = 20000
 
 opt.updatetime = 500
@@ -43,5 +43,4 @@ opt.fillchars = {
   eob = " "
 }
 
-opt.signcolumn = "auto"
 opt.signcolumn = "yes"
