@@ -1,8 +1,8 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   appName = "nvim";
   enable = true;
-  
+
   initLua = ''
     require("pyricConf")
   '';
@@ -13,6 +13,25 @@
     fd
     wl-clipboard
     xclip
+
+    # formatters
+    stylua
+    nixfmt
+    prettier
+    shfmt
+    black
+    clang-tools
+    rustfmt
+    markdownlint-cli2
+
+    # lsp servers
+    lua-language-server
+    rust-analyzer
+    clang
+    qt6.qtdeclarative
+    nixd
+    typescript-language-server
+    pyright
   ];
 
   plugins = {
@@ -34,23 +53,27 @@
       noice-nvim
       lualine-nvim
       oil-nvim
+      mini-nvim
+      nvim-notify
 
-      (nvim-treesitter.withPlugins (p: with p; [
-        lua
-        nix
-        typescript
-        javascript
-        html
-        css
-        json
-        markdown
-        bash
-        python
-        c
-        cpp
-        rust
-        qmljs
-      ]))
+      (nvim-treesitter.withPlugins (
+        p: with p; [
+          lua
+          nix
+          typescript
+          javascript
+          html
+          css
+          json
+          markdown
+          bash
+          python
+          c
+          cpp
+          rust
+          qmljs
+        ]
+      ))
     ];
     dev.pyricConf = {
       pure = ./nvim;

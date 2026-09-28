@@ -1,57 +1,57 @@
 require("oil").setup({
-  default_file_explorer = true,
+	default_file_explorer = true,
 
-  columns = {
-    "icon", 
-    "size",
-    "mtime"
-  },
+	columns = {
+		"icon",
+		"size",
+		"mtime",
+	},
 
-  buf_options = {
-    buflisted = true,
-    bufhidden = "hide",
-  },
-  
-  win_options = {
-    wrap = false,
-    signcolumn = "yes",
-    cursorcolumn = true
-  },
+	buf_options = {
+		buflisted = true,
+		bufhidden = "hide",
+	},
 
-  delete_to_trash = false,
+	win_options = {
+		wrap = false,
+		signcolumn = "yes",
+		cursorcolumn = true,
+	},
 
-  skip_confirm_for_simple_edits = true,
+	delete_to_trash = false,
 
-  prompt_save_on_select_new_entry = true,
+	skip_confirm_for_simple_edits = true,
 
-  cleanup_delay_ms = 5000,
+	prompt_save_on_select_new_entry = true,
 
-  lsp_file_methods = {
-    enabled = true,
-    timeout_ms = 1000,
-    autosave_changes = false,
-  },
+	cleanup_delay_ms = 5000,
 
-  constrain_cursor = "editable",
+	lsp_file_methods = {
+		enabled = true,
+		timeout_ms = 1000,
+		autosave_changes = false,
+	},
 
-  watch_for_changes = true,
+	constrain_cursor = "editable",
 
-  use_default_keymaps = true,
+	watch_for_changes = true,
 
-  view_options = {
-    show_hidden = true,
+	use_default_keymaps = true,
 
-    natural_order = "fast",
+	view_options = {
+		show_hidden = true,
 
-    case_insensitive = false,
-    
-    sort = {
-      {"type", "asc"},
-      {"name", "asc"},
-    },
+		natural_order = "fast",
 
-    git_status = true,
-  },
+		case_insensitive = false,
+
+		sort = {
+			{ "type", "asc" },
+			{ "name", "asc" },
+		},
+
+		git_status = true,
+	},
 })
 
-vim.keymap.set({ 'n', 'x', 'o'}, "<leader>u", "<CMD>Oil<CR>", { desc = "Open file explorer"})
+vim.keymap.set({ "n", "x", "o" }, "<leader>u", "<CMD>Oil<CR>", { desc = "Open file explorer" })
