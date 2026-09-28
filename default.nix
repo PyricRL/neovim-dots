@@ -28,6 +28,12 @@
       which-key-nvim
       indent-blankline-nvim
       nvim-autopairs
+      flash-nvim
+      conform-nvim
+      trouble-nvim
+      noice-nvim
+      lualine-nvim
+      oil-nvim
 
       (nvim-treesitter.withPlugins (p: with p; [
         lua

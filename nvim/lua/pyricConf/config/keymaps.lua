@@ -2,6 +2,8 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+map("n", "<leader>bp", "<cmd>bprev<cr>", { desc = "Switch to prev buffer" })
+map("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Switch to next buffer" })
 
 map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
