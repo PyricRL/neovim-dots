@@ -12,7 +12,8 @@ require("conform").setup({
 		c = { "clang-format" },
 		cpp = { "clang-format" },
 		rust = { "rustfmt" },
-		qmljs = { "prettier" },
+		qmljs = { "qmlformat" },
+		qml = { "qmlformat" },
 	},
 	format_on_save = {
 		lsp_fallback = true,

@@ -20,7 +20,9 @@ vim.lsp.config("rust_analyzer", {
 vim.lsp.config("clangd", {})
 
 -- QML
-vim.lsp.config("qmlls", {})
+vim.lsp.config("qmlls", {
+	filetypes = { "qml", "qmljs" },
+})
 
 -- Nix
 vim.lsp.config("nixd", {})

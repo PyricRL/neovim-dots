@@ -1,11 +1,11 @@
 require("blink.cmp").setup({
-  keymap = { preset = "super-tab" },
+	keymap = { preset = "super-tab" },
 
-  completion = {
-    documentation = { auto_show = true, auto_show_delay_ms = 0 },
-  },
+	completion = {
+		documentation = { auto_show = true, auto_show_delay_ms = 0 },
+	},
 
-  sources = {
-    default = { "lsp", "path", "snippets", "buffer" },
-  },
+	sources = {
+		default = { "lsp", "path", "snippets", "buffer" },
+	},
 })
