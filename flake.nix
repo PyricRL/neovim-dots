@@ -6,12 +6,23 @@
     mnw.url = "github:Gerg-L/mnw";
   };
 
-  outputs = { self, nixpkgs, mnw, ... }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      mnw,
+      ...
+    }:
     let
-      system = "x86_64-linux"; 
+      system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
 
-      myNeovim = mnw.lib.wrap pkgs (import ./default.nix { inherit pkgs; inherit (pkgs) lib; });
+      myNeovim = mnw.lib.wrap pkgs (
+        import ./default.nix {
+          inherit pkgs;
+          inherit (pkgs) lib;
+        }
+      );
     in
     {
       packages.${system} = {

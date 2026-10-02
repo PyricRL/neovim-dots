@@ -1,3 +1,22 @@
+-- First, define the treesitter_status function
+local function treesitter_status()
+	local highlighter = require("vim.treesitter.highlighter")
+	local buf = vim.api.nvim_get_current_buf()
+
+	local has_parser = pcall(function()
+		return vim.treesitter.get_parser(buf):lang()
+	end)
+
+	if not has_parser then
+		return " : ✗"
+	end
+	if highlighter.active[buf] then
+		return " : ✓"
+	end
+	return " : ○"
+end
+
+-- Then set up lualine with the function available
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
@@ -23,8 +42,8 @@ require("lualine").setup({
 		lualine_c = {
 			{ "filename", path = 1 },
 		},
-		lualine_x = { "encoding", "fileformat", "filetype" }, -- Added fileformat
-		lualine_y = { "lsp_status" },
+		lualine_x = { "encoding", "fileformat", "filetype" },
+		lualine_y = { "lsp_status", treesitter_status },
 		lualine_z = { "location" },
 	},
 	inactive_sections = {
