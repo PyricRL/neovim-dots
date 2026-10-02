@@ -51,6 +51,7 @@ vim.api.nvim_create_autocmd("FileType", {
 			typescript = "tsserver",
 			javascript = "tsserver",
 			qmljs = "qmlls",
+			qml = "qmlls",
 			python = "pyright",
 		}
 
