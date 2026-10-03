@@ -47,7 +47,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = "*", -- Apply to all filetypes
 	callback = function(args)
 		-- Skip if already highlighted or special buffer
-		if vim.b.ts_highlight or vim.bo[args.buf].buftype ~= "" then
+		if vim.b.ts_highlight or vim.bo[args.buf].buftype ~= "" or vim.bo[args.buf].filetype == "oil" then
 			return
 		end
 
