@@ -23,7 +23,6 @@
     clang-tools
     rustfmt
     markdownlint-cli2
-    inifmt
 
     # lsp servers
     lua-language-server

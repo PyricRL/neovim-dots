@@ -15,7 +15,6 @@ require("conform").setup({
 		qmljs = { "qmlformat" },
 		qml = { "qmlformat" },
 		yaml = { "prettier" },
-		ini = { "inifmt" },
 	},
 	format_on_save = {
 		lsp_fallback = true,
