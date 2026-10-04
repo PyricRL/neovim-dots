@@ -18,6 +18,7 @@ vim.lsp.config("rust_analyzer", {
 
 -- C/C++
 vim.lsp.config("clangd", {})
+vim.lsp.config("ccls", {})
 
 -- QML
 vim.lsp.config("qmlls", {
@@ -28,7 +29,7 @@ vim.lsp.config("qmlls", {
 vim.lsp.config("nixd", {})
 
 -- Enable lsp servers
-vim.lsp.enable("lua_ls", "rust_analyzer", "clangd", "qmlls", "nixd")
+vim.lsp.enable("lua_ls", "rust_analyzer", "clangd", "ccls", "qmlls", "nixd")
 
 -- Keybindings (same as before)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })

@@ -23,11 +23,13 @@
     clang-tools
     rustfmt
     markdownlint-cli2
+    inifmt
 
     # lsp servers
     lua-language-server
     rust-analyzer
     clang
+    ccls
     qt6.qtdeclarative
     nixd
     typescript-language-server
