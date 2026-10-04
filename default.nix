@@ -73,6 +73,7 @@
           cpp
           rust
           qmljs
+          yaml
         ]
       ))
     ];
